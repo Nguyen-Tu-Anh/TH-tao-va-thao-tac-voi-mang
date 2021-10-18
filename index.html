@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8/>
+    <title></title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+
+<body>
+<h2>Sample Screen</h2>
+<input type="text" id="elements">
+<button onclick="add()">Add</button>
+<button onclick="display()">Display</button>
+<div id="result"></div>
+<hr>
+<script>
+    let input = [];
+
+    function add() {
+        let element = document.getElementById('elements').value;
+        input.push(element);
+        document.getElementById('elements').value = '';
+    }
+    // function display() {
+    //     document.getElementById('result').innerHTML =  input + '</br>';
+    // }
+    function display () {
+        let e = "<hr/>";
+        for (let i = 0; i < input.length; i++) {
+            e += "Element " + i + " = " + input[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+</script>
+</body>
+
+</html>
